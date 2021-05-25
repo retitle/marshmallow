@@ -50,7 +50,7 @@ def read(fname):
 
 setup(
     name='marshmallow2',
-    version=find_version('src/marshmallow/__init__.py'),
+    version=find_version('src/marshmallow2/__init__.py'),
     description=('A lightweight library for converting complex '
                 'datatypes to and from native Python datatypes.'),
     long_description=read('README.rst'),
