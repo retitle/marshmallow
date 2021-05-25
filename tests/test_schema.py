@@ -8,12 +8,12 @@ from collections import namedtuple
 
 import pytest
 
-from marshmallow import (
+from marshmallow2 import (
     Schema, fields, utils, MarshalResult, UnmarshalResult,
     validates, validates_schema
 )
-from marshmallow.exceptions import ValidationError
-from marshmallow.compat import OrderedDict
+from marshmallow2.exceptions import ValidationError
+from marshmallow2.compat import OrderedDict
 
 from tests.base import *  # noqa
 

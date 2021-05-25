@@ -4,7 +4,7 @@ These should be imported from the top-level `marshmallow` module.
 
 Example: ::
 
-    from marshmallow import (
+    from marshmallow2 import (
         Schema, pre_load, pre_dump, post_load, validates_schema,
         validates, fields, ValidationError
     )

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
 
-from marshmallow import (
+from marshmallow2 import (
     Schema,
     fields,
     pre_dump,

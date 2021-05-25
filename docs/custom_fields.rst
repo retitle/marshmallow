@@ -17,7 +17,7 @@ To create a custom field class, create a subclass of :class:`marshmallow.fields.
 
 .. code-block:: python
 
-    from marshmallow import fields
+    from marshmallow2 import fields
 
     class Titlecased(fields.Field):
         def _serialize(self, value, attr, obj):
@@ -127,7 +127,7 @@ At the class level, default error messages are defined as a mapping from error c
 
 .. code-block:: python
 
-    from marshmallow import fields
+    from marshmallow2 import fields
 
     class MyDate(fields.Date):
         default_error_messages = {
@@ -141,7 +141,7 @@ Error messages can also be passed to a `Field's` constructor.
 
 .. code-block:: python
 
-    from marshmallow import Schema, fields
+    from marshmallow2 import Schema, fields
 
     class UserSchema(Schema):
 

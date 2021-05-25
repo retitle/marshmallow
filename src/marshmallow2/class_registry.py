@@ -10,7 +10,7 @@ class:`fields.Nested <marshmallow.fields.Nested>`.
 """
 from __future__ import unicode_literals
 
-from marshmallow.exceptions import RegistryError
+from marshmallow2.exceptions import RegistryError
 
 # {
 #   <class_name>: <list of class objects>

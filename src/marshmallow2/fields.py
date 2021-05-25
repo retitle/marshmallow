@@ -9,13 +9,13 @@ import uuid
 import warnings
 import decimal
 
-from marshmallow import validate, utils, class_registry
-from marshmallow.base import FieldABC, SchemaABC
-from marshmallow.utils import missing as missing_
-from marshmallow.compat import text_type, basestring, Mapping
-from marshmallow.exceptions import ValidationError
-from marshmallow.validate import Validator
-from marshmallow.warnings import RemovedInMarshmallow3Warning
+from marshmallow2 import validate, utils, class_registry
+from marshmallow2.base import FieldABC, SchemaABC
+from marshmallow2.utils import missing as missing_
+from marshmallow2.compat import text_type, basestring, Mapping
+from marshmallow2.exceptions import ValidationError
+from marshmallow2.validate import Validator
+from marshmallow2.warnings import RemovedInMarshmallow3Warning
 
 __all__ = [
     'Field',

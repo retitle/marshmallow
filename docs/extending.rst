@@ -12,7 +12,7 @@ Data pre-processing and post-processing methods can be registered using the `pre
 .. code-block:: python
     :emphasize-lines: 7
 
-    from marshmallow import Schema, fields, pre_load
+    from marshmallow2 import Schema, fields, pre_load
 
     class UserSchema(Schema):
         name = fields.Str()
@@ -44,7 +44,7 @@ One common use case is to wrap data in a namespace upon serialization and unwrap
 .. code-block:: python
     :emphasize-lines: 17,18,22,23,27,28
 
-    from marshmallow import Schema, fields, pre_load, post_load, post_dump
+    from marshmallow2 import Schema, fields, pre_load, post_load, post_dump
 
     class BaseSchema(Schema):
         # Custom options
@@ -106,7 +106,7 @@ Pre- and post-processing methods may raise a `ValidationError <marshmallow.excep
 
 .. code-block:: python
 
-    from marshmallow import Schema, fields, ValidationError, pre_load
+    from marshmallow2 import Schema, fields, ValidationError, pre_load
 
     class BandSchema(Schema):
         name = fields.Str()
@@ -126,7 +126,7 @@ If you want to store and error on a different key, pass the key name as the seco
 .. code-block:: python
     :emphasize-lines: 9
 
-    from marshmallow import Schema, fields, ValidationError, pre_load
+    from marshmallow2 import Schema, fields, ValidationError, pre_load
 
     class BandSchema(Schema):
         name = fields.Str()
@@ -169,7 +169,7 @@ The pipeline for serialization is similar, except that the "pass_many" processor
 
     .. code-block:: python
 
-        from marshmallow import Schema, fields, pre_load
+        from marshmallow2 import Schema, fields, pre_load
 
         # YES
         class MySchema(Schema):
@@ -213,7 +213,7 @@ You can specify a custom error-handling function for a :class:`Schema` by overri
     :emphasize-lines: 10-13
 
     import logging
-    from marshmallow import Schema, fields
+    from marshmallow2 import Schema, fields
 
     class AppError(Exception):
         pass
@@ -239,7 +239,7 @@ You can register schema-level validation functions for a :class:`Schema` using t
 .. code-block:: python
     :emphasize-lines: 7
 
-    from marshmallow import Schema, fields, validates_schema, ValidationError
+    from marshmallow2 import Schema, fields, validates_schema, ValidationError
 
     class NumberSchema(Schema):
         field_a = fields.Integer()
@@ -263,7 +263,7 @@ Normally, unspecified field names are ignored by the validator. If you would lik
 .. code-block:: python
     :emphasize-lines: 7
 
-    from marshmallow import Schema, fields, validates_schema, ValidationError
+    from marshmallow2 import Schema, fields, validates_schema, ValidationError
 
     class MySchema(Schema):
         foo = fields.Int()
@@ -357,7 +357,7 @@ First, we'll add our namespace configuration to a custom options class.
 .. code-block:: python
     :emphasize-lines: 3
 
-    from marshmallow import Schema, SchemaOpts
+    from marshmallow2 import Schema, SchemaOpts
 
     class NamespaceOpts(SchemaOpts):
         """Same as the default class Meta options, but adds "name" and

@@ -8,10 +8,10 @@ import uuid
 
 import pytest
 
-from marshmallow import Schema, fields, utils
-from marshmallow.exceptions import ValidationError
-from marshmallow.compat import basestring, OrderedDict
-from marshmallow.utils import missing as missing_
+from marshmallow2 import Schema, fields, utils
+from marshmallow2.exceptions import ValidationError
+from marshmallow2.compat import basestring, OrderedDict
+from marshmallow2.utils import missing as missing_
 
 from tests.base import User, ALL_FIELDS
 

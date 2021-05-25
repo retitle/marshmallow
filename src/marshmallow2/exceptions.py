@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Exception classes for marshmallow-related errors."""
 
-from marshmallow.compat import basestring
+from marshmallow2.compat import basestring
 
 class MarshmallowError(Exception):
     """Base class for all marshmallow-related errors."""

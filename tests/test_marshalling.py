@@ -2,9 +2,9 @@
 
 import pytest
 
-from marshmallow import fields, Schema, validates
-from marshmallow.marshalling import Marshaller, Unmarshaller, missing
-from marshmallow.exceptions import ValidationError
+from marshmallow2 import fields, Schema, validates
+from marshmallow2.marshalling import Marshaller, Unmarshaller, missing
+from marshmallow2.exceptions import ValidationError
 
 from tests.base import User
 

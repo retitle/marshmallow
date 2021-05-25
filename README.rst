@@ -19,7 +19,7 @@ marshmallow: simplified object serialization
 .. code-block:: python
 
     from datetime import date
-    from marshmallow import Schema, fields, pprint
+    from marshmallow2 import Schema, fields, pprint
 
     class ArtistSchema(Schema):
         name = fields.Str()

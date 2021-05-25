@@ -13,10 +13,10 @@ from decimal import Decimal, ROUND_HALF_EVEN, Context, Inexact
 from email.utils import formatdate, parsedate
 from pprint import pprint as py_pprint
 
-from marshmallow.compat import OrderedDict, binary_type, text_type
-from marshmallow.compat import get_func_args as compat_get_func_args
-from marshmallow.compat import Mapping, Iterable
-from marshmallow.warnings import unused_and_removed_in_ma3
+from marshmallow2.compat import OrderedDict, binary_type, text_type
+from marshmallow2.compat import get_func_args as compat_get_func_args
+from marshmallow2.compat import Mapping, Iterable
+from marshmallow2.warnings import unused_and_removed_in_ma3
 
 
 dateutil_available = False

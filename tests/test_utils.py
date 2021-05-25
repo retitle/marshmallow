@@ -6,8 +6,8 @@ from copy import copy, deepcopy
 
 import pytest
 
-from marshmallow import utils
-from marshmallow import warnings
+from marshmallow2 import utils
+from marshmallow2 import warnings
 from tests.base import (
     assert_datetime_equal,
     central,

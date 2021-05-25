@@ -8,7 +8,7 @@ import gc
 import timeit
 import datetime
 
-from marshmallow import Schema, fields, ValidationError, post_dump
+from marshmallow2 import Schema, fields, ValidationError, post_dump
 
 
 # Custom validator

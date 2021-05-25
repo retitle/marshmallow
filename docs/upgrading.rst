@@ -52,7 +52,7 @@ In 2.0, validation/deserialization of `None` is consistent across field types. I
 
 .. code-block:: python
 
-    from marshmallow import fields
+    from marshmallow2 import fields
 
     # In 1.0, deserialization of None was inconsistent
     fields.Int().deserialize(None)  # 0
@@ -78,7 +78,7 @@ In 2.0, these implicit defaults are removed.  A `Field's <marshmallow.fields.Fie
 
 .. code-block:: python
 
-    from marshmallow import Schema, fields
+    from marshmallow2 import Schema, fields
 
     class MySchema(Schema):
         str_no_default = fields.Str()
@@ -124,7 +124,7 @@ The pre- and post-processing API was significantly improved for better consisten
 .. code-block:: python
 
     # 1.0 API
-    from marshmallow import Schema, fields
+    from marshmallow2 import Schema, fields
 
     class ExampleSchema(Schema):
         field_a = fields.Int()
@@ -141,7 +141,7 @@ The pre- and post-processing API was significantly improved for better consisten
 
 
     # 2.0 API
-    from marshmallow import Schema, fields, pre_load, post_dump
+    from marshmallow2 import Schema, fields, pre_load, post_dump
 
     class ExampleSchema(Schema):
         field_a = fields.Int()
@@ -166,7 +166,7 @@ Similar to pre-processing and post-processing methods, schema validators are now
 .. code-block:: python
 
     # 1.0 API
-    from marshmallow import Schema, fields, ValidationError
+    from marshmallow2 import Schema, fields, ValidationError
 
     class MySchema(Schema):
         field_a = fields.Int(required=True)
@@ -178,7 +178,7 @@ Similar to pre-processing and post-processing methods, schema validators are now
             raise ValidationError('field_a must be greater than field_b')
 
     # 2.0 API
-    from marshmallow import Schema, fields, validates_schema, ValidationError
+    from marshmallow2 import Schema, fields, validates_schema, ValidationError
 
     class MySchema(Schema):
         field_a = fields.Int(required=True)
@@ -196,7 +196,7 @@ Custom accessors and error handlers are now defined as methods. `Schema.accessor
 
 .. code-block:: python
 
-    from marshmallow import Schema, fields
+    from marshmallow2 import Schema, fields
 
     # 1.0 Deprecated API
     class ExampleSchema(Schema):
@@ -229,7 +229,7 @@ The `make_object` method was deprecated from the `Schema <marshmallow.Schema>` A
 .. code-block:: python
 
     # 1.0
-    from marshmallow import Schema, fields, post_load
+    from marshmallow2 import Schema, fields, post_load
 
     class UserSchema(Schema):
         name = fields.Str()
@@ -239,7 +239,7 @@ The `make_object` method was deprecated from the `Schema <marshmallow.Schema>` A
             return User(**data)
 
     # 2.0
-    from marshmallow import Schema, fields, post_load
+    from marshmallow2 import Schema, fields, post_load
 
     class UserSchema(Schema):
         name = fields.Str()
@@ -256,7 +256,7 @@ When validating a collection (i.e. when calling ``load`` or ``dump`` with ``many
 
 .. code-block:: python
 
-    from marshmallow import Schema, fields
+    from marshmallow2 import Schema, fields
 
     class BandMemberSchema(Schema):
         name = fields.String(required=True)
@@ -296,7 +296,7 @@ When using `strict` mode, you should handle `ValidationErrors` when calling `Sch
 .. code-block:: python
     :emphasize-lines: 3,14
 
-    from marshmallow import exceptions as exc
+    from marshmallow2 import exceptions as exc
 
     schema = BandMemberSchema(strict=True)
 
@@ -343,8 +343,8 @@ Two changes must be made to make your custom fields compatible with version 2.0.
 
 .. code-block:: python
 
-    from marshmallow import fields, ValidationError
-    from marshmallow.exceptions import UnmarshallingError
+    from marshmallow2 import fields, ValidationError
+    from marshmallow2.exceptions import UnmarshallingError
 
     # In 1.0, an UnmarshallingError was raised
     class PasswordField(fields.Field):
@@ -415,8 +415,8 @@ The `fields.Select` field is deprecated in favor of the newly-added `OneOf` vali
 
 .. code-block:: python
 
-    from marshmallow import fields
-    from marshmallow.validate import OneOf
+    from marshmallow2 import fields
+    from marshmallow2.validate import OneOf
 
     # 1.0
     fields.Select(['red', 'blue'])
@@ -446,7 +446,7 @@ The default error messages for many fields and validators have been changed for 
 
 .. code-block:: python
 
-    from marshmallow import Schema, fields, validate
+    from marshmallow2 import Schema, fields, validate
 
     class ValidatingSchema(Schema):
         foo = fields.Str()
@@ -500,15 +500,15 @@ Validators were rewritten as class-based callables, making them easier to use wh
 
 .. code-block:: python
 
-    from marshmallow import fields
+    from marshmallow2 import fields
 
     # 1.2
-    from marshmallow.validate import Range
+    from marshmallow2.validate import Range
 
     age = fields.Int(validate=[Range(min=0, max=999)])
 
     # Pre-1.2
-    from marshmallow.validate import ranging
+    from marshmallow2.validate import ranging
 
     age = fields.Int(validate=[lambda val: ranging(val, min=0, max=999)])
 
@@ -523,7 +523,7 @@ In version 1.2, deserialization of the empty string (``''``) with `DateTime`, `D
 
 .. code-block:: python
 
-    from marshmallow import fields
+    from marshmallow2 import fields
 
     fields.Date().deserialize('')
     # UnmarshallingError: Could not deserialize '' to a date object.
@@ -544,7 +544,7 @@ Perhaps the largest change is in how objects get serialized. Serialization occur
 
 .. code-block:: python
 
-    from marshmallow import Schema, fields
+    from marshmallow2 import Schema, fields
 
     class UserSchema(Schema):
         email = fields.Email()
@@ -573,7 +573,7 @@ The Fields interface was also reworked in 1.0 to make it easier to define custom
 
 .. code-block:: python
 
-    from marshmallow import fields, MarshallingError
+    from marshmallow2 import fields, MarshallingError
 
     class PasswordField(fields.Field):
         def _serialize(self, value, attr, obj):
@@ -588,7 +588,7 @@ Another major change in 1.0 is that multiple validation errors can be stored for
 
 .. code-block:: python
 
-    from marshmallow import Schema, fields, ValidationError
+    from marshmallow2 import Schema, fields, ValidationError
 
     def must_have_number(val):
         if not any(ch.isdigit() for ch in val):

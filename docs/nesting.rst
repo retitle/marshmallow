@@ -26,7 +26,7 @@ Use a :class:`Nested <marshmallow.fields.Nested>` field to represent the relatio
 .. code-block:: python
     :emphasize-lines: 10
 
-    from marshmallow import Schema, fields, pprint
+    from marshmallow2 import Schema, fields, pprint
 
     class UserSchema(Schema):
         name = fields.String()
@@ -146,7 +146,7 @@ For example, a representation of an ``Author`` model might include the books tha
 
 .. code-block:: python
 
-    from marshmallow import pprint
+    from marshmallow2 import pprint
     from mymodels import Author, Book
 
     author = Author(name='William Faulkner')

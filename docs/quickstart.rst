@@ -29,7 +29,7 @@ Create a schema by defining a class with variables mapping attribute names to :c
 
 .. code-block:: python
 
-    from marshmallow import Schema, fields
+    from marshmallow2 import Schema, fields
 
     class UserSchema(Schema):
         name = fields.Str()
@@ -48,7 +48,7 @@ Serialize objects by passing them to your schema's :meth:`dump <marshmallow.Sche
 
 .. code-block:: python
 
-    from marshmallow import pprint
+    from marshmallow2 import pprint
 
     user = User(name="Monty", email="monty@python.org")
     schema = UserSchema()
@@ -113,7 +113,7 @@ In order to deserialize to an object, define a method of your :class:`Schema` an
 .. code-block:: python
     :emphasize-lines: 8-10
 
-    from marshmallow import Schema, fields, post_load
+    from marshmallow2 import Schema, fields, post_load
 
     class UserSchema(Schema):
         name = fields.Str()
@@ -214,7 +214,7 @@ Validation functions either return a boolean or raise a :exc:`ValidationError`. 
 .. code-block:: python
     :emphasize-lines: 7,10,14
 
-    from marshmallow import Schema, fields, ValidationError
+    from marshmallow2 import Schema, fields, ValidationError
 
     def validate_quantity(n):
         if n < 0:
@@ -245,7 +245,7 @@ It is often convenient to write validators as methods. Use the `validates <marsh
 
 .. code-block:: python
 
-    from marshmallow import fields, Schema, validates, ValidationError
+    from marshmallow2 import fields, Schema, validates, ValidationError
 
     class ItemSchema(Schema):
         quantity = fields.Integer()
@@ -265,7 +265,7 @@ It is often convenient to write validators as methods. Use the `validates <marsh
 
     .. code-block:: python
 
-        from marshmallow import ValidationError
+        from marshmallow2 import ValidationError
 
         try:
             UserSchema(strict=True).load({'email': 'foo'})

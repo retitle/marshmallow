@@ -5,10 +5,10 @@ import decimal
 
 import pytest
 
-from marshmallow import fields, utils, Schema, validate
-from marshmallow.exceptions import ValidationError
-from marshmallow.compat import basestring
-from marshmallow.validate import Equal
+from marshmallow2 import fields, utils, Schema, validate
+from marshmallow2.exceptions import ValidationError
+from marshmallow2.compat import basestring
+from marshmallow2.validate import Equal
 
 from tests.base import (
     assert_almost_equal,

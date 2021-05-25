@@ -20,7 +20,7 @@ import alabaster
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath(os.path.join('..', 'src')))
 import marshmallow  # noqa
-from marshmallow.compat import OrderedDict  # noqa
+from marshmallow2.compat import OrderedDict  # noqa
 
 # -- General configuration -----------------------------------------------------
 

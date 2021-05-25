@@ -12,15 +12,15 @@ import uuid
 import warnings
 import functools
 
-from marshmallow import base, fields, utils, class_registry, marshalling
-from marshmallow.compat import (with_metaclass, iteritems, text_type,
+from marshmallow2 import base, fields, utils, class_registry, marshalling
+from marshmallow2.compat import (with_metaclass, iteritems, text_type,
                                 binary_type, Mapping, OrderedDict)
-from marshmallow.exceptions import ValidationError
-from marshmallow.orderedset import OrderedSet
-from marshmallow.decorators import (PRE_DUMP, POST_DUMP, PRE_LOAD, POST_LOAD,
+from marshmallow2.exceptions import ValidationError
+from marshmallow2.orderedset import OrderedSet
+from marshmallow2.decorators import (PRE_DUMP, POST_DUMP, PRE_LOAD, POST_LOAD,
                                     VALIDATES, VALIDATES_SCHEMA)
-from marshmallow.utils import missing
-from marshmallow.warnings import RemovedInMarshmallow3Warning, ChangedInMarshmallow3Warning
+from marshmallow2.utils import missing
+from marshmallow2.warnings import RemovedInMarshmallow3Warning, ChangedInMarshmallow3Warning
 
 
 #: Return type of :meth:`Schema.dump` including serialized data and errors
@@ -229,7 +229,7 @@ class BaseSchema(base.SchemaABC):
     .. code-block:: python
 
         import datetime as dt
-        from marshmallow import Schema, fields
+        from marshmallow2 import Schema, fields
 
         class Album(object):
             def __init__(self, title, release_date):
